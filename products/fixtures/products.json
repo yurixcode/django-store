@@ -1,0 +1,26 @@
+[
+{
+    "model": "products.product",
+    "pk": 1,
+    "fields": {
+        "title": "Playera para Princesas",
+        "description": "Pues \u00e9 para princesos en realidad",
+        "image": "products/playera.jpg",
+        "price": "95.00",
+        "slug": "playera-para-princesas",
+        "created_at": "2019-12-16T12:24:52.927Z"
+    }
+},
+{
+    "model": "products.product",
+    "pk": 2,
+    "fields": {
+        "title": "Playera para Reinas",
+        "description": "Pos eso, para reinas sin corona",
+        "image": "products/playera-mujer.jpg",
+        "price": "39.00",
+        "slug": "playera-para-reinas",
+        "created_at": "2019-12-16T12:56:31.259Z"
+    }
+}
+]

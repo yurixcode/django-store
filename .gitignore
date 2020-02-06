@@ -1,0 +1,7 @@
+migrations/
+venv/
+*.sqlite3
+*.pyc
+*.env
+*.jpg
+*.png

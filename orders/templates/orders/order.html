@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block breadcrumb %}
+    {% include 'orders/snippets/breadcrumb.html' %}
+{% endblock %}
+
+{% block content %}
+    <div class="col-8">
+        <div class="h3">
+            Revisa tu pedido
+        </div>
+
+        {% for product in cart.products.all %}
+            <div class="card mt-2">
+                <div class="card-body">
+                    {% include 'orders/snippets/product.html' %}
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+    
+    <div class="col">
+        {% url 'orders:address' as next_url %}
+        {% include 'orders/snippets/resume.html' with next_url=next_url %}
+    </div>
+{% endblock %}

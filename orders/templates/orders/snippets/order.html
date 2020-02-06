@@ -1,0 +1,71 @@
+{% load product_extras %}
+
+<div class="card mb-3">
+    <div class="card-header">
+        <div class="row">
+
+            <div class="col-4">
+                <div class="text-uppercase font-weight-bold">
+                    Pedido realizado
+                </div>
+                <div>
+                    {{ order.created_at }}
+                </div>
+            </div>
+
+            <div class="col-4">
+                <div class="text-uppercase font-weight-bold">
+                    Total
+                </div>
+                <div>
+                    {{ order.total | price_format }}
+                </div>
+            </div>
+
+            <div class="col-4">
+                <div class="text-uppercase font-weight-bold">
+                    Envíado a
+                </div>
+                {{ order.shipping_address }}
+            </div>
+
+        </div>
+    </div>
+
+    <div class="card-body">
+        {% for cp in order.cart.products_related %}
+            {% with product=cp.product %}
+                <div class="row">
+                    <div class="col-4 text-right">
+                        {% if product.image %}
+                            <img src="{{ product.image.url }}" alt="Imagen del producto" width="60" height="60">
+                        {% endif %}
+                    </div>
+                    <div class="col-4">
+                        <div>
+                            {{ product.title }}
+                        </div>
+                        <div class="text-danger">
+                            {{ product.price | price_format }}
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div>
+                            Cantidad
+                        </div>
+                        <div>
+                            {{ cp.quantity }}
+                        </div>
+                    </div>
+                </div>
+            {% endwith %}
+        {% endfor %}
+        <hr>
+        <div class="text-center text-info text-uppercase font-weight-bold">
+            ID de pedido:
+        </div>
+        <div class="text-center text-info font-weight-bold">
+            {{ order.order_id }}
+        </div>
+    </div>
+</div>
