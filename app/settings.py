@@ -135,7 +135,7 @@ EMAIL_HOST_PASSWORD = config('USER_MAIL_PASSWORD') #Env
 EMAIL_USE_TLS = True
 
 # Stripe
-STRIPE_PUBLIC_KEY = 'pk_test_ZCIcW124etx2dx0rUFSht3Bm'
+STRIPE_PUBLIC_KEY = config('STRIPE_PUBLIC_KEY')
 STRIPE_PRIVATE_KEY = config('STRIPE_PRIVATE_KEY') #Env
 
 # Static files (CSS, JavaScript, Images)
